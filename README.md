@@ -1,7 +1,7 @@
 # tmp
 
+```java
 EventSourceListener listener = new EventSourceListener() {
-
                 private StringBuilder buffer = new StringBuilder();
 
                 @Override
@@ -37,3 +37,4 @@ EventSourceListener listener = new EventSourceListener() {
             };
             EventSource.Factory factory = EventSources.createFactory(okHttpChatClient);
             EventSource source = factory.newEventSource(httpRequest, listener);
+```
