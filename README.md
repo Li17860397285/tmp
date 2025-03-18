@@ -1,5 +1,16 @@
 # tmp
 
+```shell
+curl http://localhost:34321/v1/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "/share/tanghuaixi/release_models/FIM-SFT/kwaipilot2-dbs",
+        "prompt": "San Francisco is a",
+        "max_tokens": 128,
+        "temperature": 0
+    }'
+```
+
 ```java
 package kuaishou.kwaipilot.onprem.service.completion;
 
