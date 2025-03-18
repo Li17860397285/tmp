@@ -1,5 +1,6 @@
 # tmp
 
+####   请求模型
 ```shell
 curl http://localhost:34321/v1/completions \
     -H "Content-Type: application/json" \
@@ -11,6 +12,26 @@ curl http://localhost:34321/v1/completions \
     }'
 ```
 
+#### 请求模型服务
+```shell
+curl -X POST http://127.0.0.1:5070/mapi/code/completion \
+-H "Content-Type:  application/json" \
+-d '{
+"language": "java",
+"file_name": "src/main/java/MyClass.java",
+"cursor_before_text": "public class MyClass { \n const",
+"cursor_after_text":  "}",
+"cursor_offset": 22,
+"similar_codes": [],
+"extra": {
+ "historyDocument": "[{\"fileName\": \"doc-789\", \"content\": \"public class AnotherClass {}\", \"language\":\"javal\", \"cursorOffset\":5}]",
+ "request_id": "req-456"
+},
+"stream": true
+}'
+```
+
+Java服务调用Demo
 ```java
 package kuaishou.kwaipilot.onprem.service.completion;
 
